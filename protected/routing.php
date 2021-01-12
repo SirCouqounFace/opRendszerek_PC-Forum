@@ -14,7 +14,7 @@ switch ($_GET['P']) {
 
 	case 'view_topic': IsUserLoggedIn() ? require_once PROTECTED_DIR.'topic/profile.php' : header('Location: index.php'); break;
 
-	case 'list_topic': !IsUserLoggedIn() ? require_once PROTECTED_DIR.'topic/list.php' : header('Location: index.php'); break;
+	case 'list_topic': IsUserLoggedIn() ? require_once PROTECTED_DIR.'topic/list.php' : header('Location: index.php'); break;
 
 	case 'login': !IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/login.php' : header('Location: index.php'); break;
 
@@ -22,7 +22,7 @@ switch ($_GET['P']) {
 
 	case 'logout': IsUserLoggedIn() ? UserLogout() : header('Location: index.php'); break;
 
-	case 'users': !IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/user_list.php' : header('Location: index.php'); break;
+	case 'users': IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/user_list.php' : header('Location: index.php'); break;
 
 	default: require_once PROTECTED_DIR.'normal/404.php'; break;
 }

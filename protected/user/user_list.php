@@ -1,4 +1,6 @@
-
+<?php if(!isset($_SESSION['admin']) || $_SESSION['admin'] < 1) : ?>
+	<h1>Page access is forbidden!</h1>
+<?php else : ?>
 	<?php 
 	$query = "SELECT username, email, admin FROM userlist";
 	require_once DATABASE_CONTROLLER;
@@ -30,3 +32,4 @@
 			</tbody>
 		</table>
 	<?php endif; ?>
+<?php endif; ?>
