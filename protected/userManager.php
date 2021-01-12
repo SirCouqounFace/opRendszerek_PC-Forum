@@ -13,7 +13,7 @@ function UserLogin($email, $password) {
 	$query = "SELECT id, username, email, admin FROM userlist WHERE email = :email AND password = :password";
 	$params = [
 		':email' => $email,
-		':password' => $password
+		':password' => sha1($password)
 	]; 
 
 	require_once DATABASE_CONTROLLER;
@@ -39,7 +39,7 @@ function UserRegister($email, $password, $uname) {
 		$params = [
 			':username' => $uname,
 			':email' => $email,
-			':password' => $password
+			':password' => sha1($password)
 		];
 
 		if(executeDML($query, $params)) 
