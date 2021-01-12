@@ -7,7 +7,7 @@ define('DATABASE_CONTROLLER', PROTECTED_DIR.'database.php');
 define('USER_MANAGER', PROTECTED_DIR.'userManager.php');
 
 define('DB_TYPE', 'mysql');
-define('DB_HOST', 'remotemysql.com:3306');
+define('DB_HOST', 'remotemysql.com');
 define('DB_NAME', 'jqzwveaYml');
 define('DB_USER', 'jqzwveaYml');
 define('DB_PASS', 'ZATjsJdLsL');
